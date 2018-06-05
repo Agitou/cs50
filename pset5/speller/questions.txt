@@ -1,0 +1,33 @@
+0.  TODO
+1.  getrusage returns resource usage statistics measures for who.
+
+2.  There are 16 members in the struct rusage date type.
+
+3.  Because the struct rusage type uses nodes to store its information.
+
+4.  The for loop reads in a character at the init state //int c = fgetc(fp)
+    and reads in another character at the end of the loop
+    
+    The execution for the character/'c' falls into 3 methods depending on its value.
+    
+    If 'c' is an alphabet/apostrophe then it gets added into the array 'word', which stores valid characters.
+    Soon after, the variable 'index', which indicates the position of the incoming word, gets incremented.
+    If however, the index surpasses the defined limit -- LENGTH = 45 -- the word is skipped with a while loop,
+    which reads in characters as long as they are alphabets and not EOF. After that, the index is set to 0
+    in preparation of the next word.
+    
+    If 'c' is a digit then it gets skipped over like the while loop in the previous case and index is also set to 0 for prepartion.
+    
+    If 'c' is neither of those cases, then it means the word has completed. However, before checking the word we set the element after
+    the last word to '\0' to prevent the word getting combined with the leftover characters of the previous word. After that we increment
+    the word counter -- words -- to update our record of the number of words in the text. We also do something else before checking the word,
+    that is noting the current time, which we also do after calling 'check' to remember the duration of the checking process to add it to the total
+    checkign time -- timeCheck. After checking the boolean value 'misspelled' we print the word if it's false. THen in the end, we set index
+    to 0 to prepare for the next word.
+    
+    
+    
+
+5.  Reading whole strings might include alphanumeric strings and also words whose lengths are longer than 45
+
+6.  It's decalred const so that the value that the pointer is pointing to cannot be modified.

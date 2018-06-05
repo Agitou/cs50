@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Portfolio
+{% endblock %}
+
+{% block main %}
+<div class="container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Symbol</th>
+        <th>Name</th>
+        <th>Shares</th>
+        <th>Price</th>
+        <th>TOTAL</th> 
+      </tr>
+    </thead>
+    <tbody>
+        {% for row in rows %}
+        <tr>
+            <th>{{ row["symbol"] }}</th>
+            <th>{{ row["name"] }}</th>
+            <th>{{ row["total_shares"] }}</th>
+            <th>{{ row["pps"] }}</th>
+            <th>{{ row["pps"] * row["total_shares"] }}</th> 
+        </tr>
+        {% endfor %}
+    </tbody>
+    <tfoot>
+        <tr>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th>
+            {{ cash }}
+            </th>
+        </tr>
+        </tfoot>
+  </table>
+</div>
+
+{% endblock %}
